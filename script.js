@@ -34,6 +34,7 @@ if(leftNum != "" && rightNum == ""){
 
 
 function operate(){
+    if(leftNum != "" && operator!= "" && rightNum!=""){
     left = leftNum
     symbol = operator
     right = rightNum    
@@ -64,6 +65,7 @@ function operate(){
         leftNum = divide(left,right)
         updateDiv()
     }
+}
 }
 
 function add(num1,num2){
