@@ -2,14 +2,22 @@ let leftNum =""
 let rightNum =""
 let operator=""
 
+let displayBox = document.createElement("div")
+displayBox.className = "displayBox"
 let display = document.createElement("DIV")
     display.textContent = leftNum+" " + operator + " " + rightNum
+    display.className = "display"
+    display.innerHTML = "READY"
+
+
 
 function clear(){
      leftNum =""
      rightNum =""
      operator=""
+    
      updateDiv()
+      display.innerHTML="READY"
 }
 
 function number(){
@@ -85,12 +93,27 @@ function multiply(num1,num2){
 
 function divide(num1,num2){
     let store = parseFloat(num1) / parseFloat(num2)
+    
+    store = Math.round(store*10)/10
     return store.toString()
 }
 
 
 
 function begin(){
+    let numbContainer = document.createElement("div")
+    numbContainer.className = "numbContainer"
+
+    let opContainer = document.createElement("div")
+    opContainer.className = "opContainer"
+
+    let equalsContainer = document.createElement("div")
+    equalsContainer.className = "equalsContainer"
+
+    let bigContainer = document.createElement("div")
+    bigContainer.className = "bigContatiner"
+
+
     let number0 = document.createElement("BUTTON")
     number0.innerHTML = 0
     number0.className = "numb"
@@ -157,26 +180,39 @@ function begin(){
 
     
 
-    document.body.append(display)
+    displayBox.appendChild(display)
 
-    document.body.appendChild(number0)
-    document.body.appendChild(number1)
-    document.body.appendChild(number2)
-    document.body.appendChild(number3)
-    document.body.appendChild(number4)
-    document.body.appendChild(number5)
-    document.body.appendChild(number6)
-    document.body.appendChild(number7)
-    document.body.appendChild(number8)
-    document.body.appendChild(number9)
+    
+  
+    numbContainer.appendChild(number1)
+    numbContainer.appendChild(number2)
+    numbContainer.appendChild(number3)
+    numbContainer.appendChild(number4)
+    numbContainer.appendChild(number5)
+    numbContainer.appendChild(number6)
+    numbContainer.appendChild(number7)
+    numbContainer.appendChild(number8)
+    numbContainer.appendChild(number9)
+    numbContainer.appendChild(number0)
 
-    document.body.appendChild(plus)
-    document.body.appendChild(minus)
-    document.body.appendChild(times)
-    document.body.appendChild(divide)
 
-    document.body.appendChild(equalsButton)
-    document.body.appendChild(clearButton)
+   opContainer.appendChild(plus)
+    opContainer.appendChild(minus)
+    opContainer.appendChild(times)
+   opContainer.appendChild(divide)
+
+   
+   equalsContainer.appendChild(clearButton)
+   equalsContainer.appendChild(equalsButton)
+
+   bigContainer.appendChild(numbContainer)
+    bigContainer.appendChild(opContainer)
+
+   document.body.appendChild(displayBox)
+    document.body.appendChild(bigContainer)
+    document.body.appendChild(equalsContainer)
+
+    
 
     equalsButton.addEventListener("click",operate)
     clearButton.addEventListener("click",clear)

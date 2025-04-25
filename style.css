@@ -1,2 +1,57 @@
 *{
+    
     }
+
+.display{
+    border: black;
+    border-style: solid;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 8;
+    width: 20vh;
+
+}
+
+.numbContainer{
+    
+    height: 20vh;
+    width: 15vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.displayBox{
+    display: flex;
+    justify-content: center;
+}
+.numb, .operator{
+    height: 5vh;
+    width: 5vh;
+}
+
+.bigContatiner{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.opContainer{
+display: flex;
+flex-wrap: wrap;
+width: 5vh;
+}
+
+.equalsContainer{
+display: flex;
+justify-content: center;
+}
+
+.clearButton{
+    height: 5vh;
+    width: 15vh;
+}
+
+.equalsButton{
+    height: 5vh;
+    width: 5vh;
+}
